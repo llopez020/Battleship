@@ -132,6 +132,6 @@ app.get('/', (req, res) => {
 });
 
 app.get('/play', (req, res) => {
-	res.sendFile(__dirname + 'serve/play.html');
+	res.sendFile(__dirname + '/serve/play.html');
 });
 
