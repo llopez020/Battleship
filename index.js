@@ -120,5 +120,5 @@ app.get('/leaderboard', (req, res) => {
 });
 
 app.get('/signin', (req, res) => {
-	 res.sendFile(path.join('/serve/log.html'));
+	res.sendFile(__dirname + '/serve/log.html');
 });
