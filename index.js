@@ -75,7 +75,7 @@ io.on('connection', function (sockett) {
 app.post("*/data", function(req, res){
     var newUser = new User(req.body.data);
 	
-	User.find().then({user: newUser.user}, function(err, docs) {
+	User.findOne({user: newUser.user}).then(docs => {
 		if(!docs){
 			newUser.wins = 0;
 			newUser.password = bcrypt.hashSync(newUser.password, 10);
@@ -92,7 +92,7 @@ app.post("*/data", function(req, res){
 app.post("*/login", function(req,res){
 	var tempUser = new User(req.body.data);
 
-	User.find().then({user: tempUser.user}, function(err, docs) {
+	User.findOne({user: newUser.user}).then(docs => {
 		if(docs){
 			bcrypt.compare(tempUser.password, docs.password, function(err, result) {
 				if(result==true) {
