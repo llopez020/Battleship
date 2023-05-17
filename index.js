@@ -92,7 +92,7 @@ app.post("*/data", function(req, res){
 app.post("*/login", function(req,res){
 	var tempUser = new User(req.body.data);
 
-	User.findOne({user: newUser.user}).then(docs => {
+	User.findOne({user: User.user}).then(docs => {
 		if(docs){
 			bcrypt.compare(tempUser.password, docs.password, function(err, result) {
 				if(result==true) {
