@@ -23,7 +23,7 @@
             <div id="passtxt">Passwords must be at least 8 characters.</div>
             <div id="incorrecttxt"></div>
             <div id="logint">REGISTER</div>
-            <div id="regtext">Already have an account? Login <a href="/log.html" style="color: #51DB5C;">here</a></div>
+            <div id="regtext">Already have an account? Login <a href="/signin" style="color: #51DB5C;">here</a></div>
 
         </div>
 
@@ -50,13 +50,13 @@
         var lead = document.getElementById("but3");
         var log = document.getElementById("login");
         var regi = document.getElementById("reg");
-
+   
         home.addEventListener("click", function(e) {
-            window.location.href = '/home.html';
+            window.location.href = '/home';
         });
 
         play.addEventListener("click", function(e) {
-            window.location.href = '/index.html';
+            window.location.href = '/';
         });
 
         lead.addEventListener("click", function(e) {
@@ -64,11 +64,11 @@
         });
 
         log.addEventListener("click", function(e) {
-            window.location.href = '/log.html';
+            window.location.href = '/signin';
         });
 
         regi.addEventListener("click", function(e) {
-            window.location.href = '/regi.html';
+            window.location.href = '/register';
         });
 
         const query = window.location.search;
