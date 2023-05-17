@@ -14,7 +14,7 @@ var User = require("./serve/files/data");
 const { db } = require('./serve/files/data');
 
 const server = app.listen(port, function() {
-  console.log('App listening on port ${port}!');
+  console.log('App listening on port %d!', port);
 });
 
 const bodyParser= require('body-parser');
