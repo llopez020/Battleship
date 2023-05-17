@@ -120,5 +120,5 @@ app.get('/leaderboard', (req, res) => {
 });
 
 app.get('/signin', (req, res) => {
-	res.sendFile(__dirname + '/index.html');
+	res.sendFile(__dirname + 'index.html');
 });
