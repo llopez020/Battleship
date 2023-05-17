@@ -55,7 +55,7 @@ io.on('connection', function (sockett) {
 
 	sockett.on('win', function (username) {
 		sockett.broadcast.to(id).emit('sendwin');
-		User.findOne({user: username}, function(err, docs) {
+		User.findOne({user: username}).then(docs => {
 			if(docs){
 				docs.wins++;
 				docs.save();
@@ -78,7 +78,7 @@ app.post("*/data", function(req, res){
 	User.findOne({user: newUser.user}).then(docs => {
 		if(!docs){
 			newUser.wins = 0;
-			newUser.password = newUser.password;
+			newUser.password = bcrypt.hashSync(newUser.password, 10);
 			res.cookie('account', newUser.user);
 			newUser.save();
 			console.log("User " + newUser.user+" added to database");
@@ -92,7 +92,7 @@ app.post("*/data", function(req, res){
 app.post("*/login", function(req,res){
 	var tempUser = new User(req.body.data);
 
-	User.findOne({user: User.user}).then(docs => {
+	User.findOne({user: tempUser.user}).then(docs => {
 		if(docs){
 			bcrypt.compare(tempUser.password, docs.password, function(err, result) {
 				if(result==true) {
