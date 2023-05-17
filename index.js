@@ -82,9 +82,9 @@ app.post("*/data", function(req, res){
 			res.cookie('account', newUser.user);
 			newUser.save();
 			console.log("User " + newUser.user+" added to database");
-			res.redirect("/home.html");
+			res.redirect("home");
 		} else {
-			res.redirect("regi.html?taken");
+			res.redirect("register?taken");
 		}
 	});
 });
@@ -98,13 +98,13 @@ app.post("*/login", function(req,res){
 				if(result==true) {
 					res.cookie('account', tempUser.user);
 					console.log("Logged in!");
-					res.redirect("home.html");
+					res.redirect("home");
 				} else {
-					res.redirect("log.html?incorrect");
+					res.redirect("signin?incorrect");
 				}
 			});
 		} else {
-			res.redirect("log.html?incorrect");
+			res.redirect("signin?incorrect");
 		}
 	});
 });
@@ -120,5 +120,14 @@ app.get('/leaderboard', (req, res) => {
 });
 
 app.get('/signin', (req, res) => {
-	res.sendFile(__dirname + 'index.html');
+	res.sendFile(__dirname + '/log.html');
 });
+
+app.get('/register', (req, res) => {
+	res.sendFile(__dirname + '/regi.html');
+});
+
+app.get('/home', (req, res) => {
+	res.sendFile(__dirname + '/home.html');
+});
+
