@@ -78,7 +78,7 @@ app.post("*/data", function(req, res){
 	User.findOne({user: newUser.user}).then(docs => {
 		if(!docs){
 			newUser.wins = 0;
-			newUser.password = bcrypt.hashSync(newUser.password, 10);
+			newUser.password = newUser.password;
 			res.cookie('account', newUser.user);
 			newUser.save();
 			console.log("User " + newUser.user+" added to database");
