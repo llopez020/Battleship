@@ -117,8 +117,8 @@ app.get('/leaderboard', (req, res) => {
 	})
 	.catch(/* ... */)
 	
-})
+});
 
 app.get('/signin', (req, res) => {
 	 res.sendFile(path.join('/log.html')
-})
+});
