@@ -120,14 +120,14 @@ app.get('/leaderboard', (req, res) => {
 });
 
 app.get('/signin', (req, res) => {
-	res.sendFile(__dirname + '/log.html');
+	res.sendFile(__dirname + '/serve/log.html');
 });
 
 app.get('/register', (req, res) => {
-	res.sendFile(__dirname + '/regi.html');
+	res.sendFile(__dirname + '/serve/regi.html');
 });
 
 app.get('/home', (req, res) => {
-	res.sendFile(__dirname + '/home.html');
+	res.sendFile(__dirname + '/serve/home.html');
 });
 
