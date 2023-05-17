@@ -127,7 +127,11 @@ app.get('/register', (req, res) => {
 	res.sendFile(__dirname + '/serve/regi.html');
 });
 
-app.get('/home', (req, res) => {
+app.get('/', (req, res) => {
 	res.sendFile(__dirname + '/serve/home.html');
+});
+
+app.get('/play', (req, res) => {
+	res.sendFile(__dirname + '/index.html');
 });
 
