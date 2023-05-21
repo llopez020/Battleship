@@ -1,2 +1,2 @@
-# CS_383_Final_BattleShip
-Final Project for CS 383 - Modern Web Design
+# BattleShip Online
+HTML, CSS, JavaScript, Node.js, Socket.IO, Express.js, Mongoose/MongoDB
